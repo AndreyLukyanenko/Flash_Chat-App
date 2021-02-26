@@ -1,10 +1,8 @@
-import 'package:flash_chat_app/components/input_textfield.dart';
 import 'package:flash_chat_app/components/rounded_button.dart';
 import 'package:flash_chat_app/screens/chat_screen.dart';
 import 'package:flutter/material.dart';
 
 import '../constans.dart';
-import 'chat_screen.dart';
 
 class RegistrationScreen extends StatefulWidget {
   static const String route = 'registation_screen';
@@ -13,6 +11,9 @@ class RegistrationScreen extends StatefulWidget {
 }
 
 class _RegistrationScreenState extends State<RegistrationScreen> {
+  String email;
+  String password;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,16 +34,20 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             SizedBox(
               height: 48.0,
             ),
-            InputTextField(
-              hintText: 'Enter your @email',
-              onChanged: (value) {},
+            TextField(
+              decoration: kTextfieldDecoration.copyWith(hintText: 'Enter your @email'),
+              onChanged: (value) {
+                email = value;
+              },
             ),
             SizedBox(
               height: 8.0,
             ),
-            InputTextField(
-              hintText: 'Enter your password',
-              onChanged: (value) {},
+            TextField(
+              decoration: kTextfieldDecoration.copyWith(hintText: 'Enter your password'),
+              onChanged: (value) {
+                password = value;
+              },
             ),
             SizedBox(
               height: 24.0,
@@ -50,10 +55,8 @@ class _RegistrationScreenState extends State<RegistrationScreen> {
             RoundedButton(
               text: 'Register',
               onPressed: () {
-                Navigator.pushNamed(
-                  context,
-                  ChatScreen.route,
-                );
+                print(email);
+                print(password);
               },
               color: kRoundedButtonColor,
             )

@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flash_chat_app/components/input_textfield.dart';
 import 'package:flash_chat_app/components/rounded_button.dart';
 
 import '../constans.dart';
@@ -32,15 +31,17 @@ class _LoginScreenState extends State<LoginScreen> {
             SizedBox(
               height: 48.0,
             ),
-            InputTextField(
-              hintText: 'Enter your @email',
+            TextField(
+              decoration:
+                  kTextfieldDecoration.copyWith(hintText: 'Enter your @email'),
               onChanged: (value) {},
             ),
             SizedBox(
               height: 8.0,
             ),
-            InputTextField(
-              hintText: 'Enter your password',
+            TextField(
+              decoration: kTextfieldDecoration.copyWith(
+                  hintText: 'Enter your password'),
               onChanged: (value) {},
             ),
             SizedBox(
@@ -62,4 +63,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-
